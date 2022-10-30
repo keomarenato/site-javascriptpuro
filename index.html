@@ -15,6 +15,7 @@
       <li><a href="#faq">Faq</a></li>
       <li><a href="#contato">Contato</a></li>
       <li><a href="https://www.origamid.com/">Dev →</a></li>
+
     </ul>
   </nav>
   <section class="grid-section animais js-scroll" id="animais">
@@ -117,19 +118,101 @@
     <div class="mapa">
       <img src="img/mapa.png">
     </div>
+    
     <ul class="dados">
-      <li>contato@origamid.com</li>
-      <li>+55 (21) 9999-9999</li>
-      <li>Rua do Conde, nº 21</li>
-      <li>Rio de Janeiro - RJ</li>
+
+      <main class="principal">
+      <h2 class="principal__titulo">Deixa sua Mensagem</h2>
+
+      <div class="formulario__campo"> 
+       <label class="campo__etiqueta" for="nome">Nome</label>
+        <input name="nome" id="nome" class="campo__escrita" required />
+      </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="telefone">Contato</label>
+          <input name="telefone" id="telefone" type="tel" placeholder="(XX) XXXXX-XXXX" class="campo__escrita"required />
+       </div>
+
+       <h3 class="principal__subtitulo">Endereço</h3>
+        
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="cep">CEP</label>
+          <input name="cep" id="cep" class="campo__escrita" required/>
+          <div id="erro"></div>
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="endereco">Endereço</label>
+          <input name="endereco" id="endereco" class="campo__escrita" required/>
+        </div>
+
+        <div class="formulario__dupla">
+          <div class="formulario__campo">
+          <label class="campo__etiqueta" for="numero">Numero</label>
+          <input name="numero" id="numero" class="campo__escrita" required />
+        </div>
+
+        <div class="formulario__campo">
+          <label class="campo__etiqueta" for="bairro">Bairro</label>
+          <input name="bairro" id="bairro" class="campo__escrita" required />
+        </div>
+
+        <div class="formulario__campo">
+           <label class="campo__etiqueta" for="cidade">Cidade</label>
+           <input name="cidade" id="cidade" class="campo__escrita" required />
+         </div>
+
+          <div class="formulario__campo">
+                    <label class="campo__etiqueta" for="estado">UF</label>
+                    <select id="estado" name="estado" class="campo__escrita">
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                        <option value="EX">Estrangeiro</option>
+                    </select>
+
+                </div>
+
+            <input type="submit" value="Enviar formulário" class="formulario__botao" id="enviar">
+
+            </main>
+
     </ul>
   </section>
+
+     
+
 
   <footer class="copy">
     <p>Todos os direitos reservados.</p>
   </footer>
 
   <script src="index.js"></script>  
-  <script src="treinar.js"></script> 
+   
 </body>
 </html>

@@ -82,3 +82,39 @@ function initAnimacaoScroll() {
   }
 }
 initAnimacaoScroll()
+
+// Fazer uma API do Correio, no campo CONTATO
+async function buscaEndereco(cep) {
+   
+   var mensagemErro = document.getElementById('erro')
+   mensagemErro.InnerHTML = ''
+
+  try { 
+ var consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+ var consultaCEPCovertida = await consultaCEP.json()
+  
+  if(consultaCEPCovertida.erro) {
+    throw Error('Cep não existe')
+  }
+   var cidade = document.getElementById('cidade')
+   var logradouro = document.getElementById('endereco')
+   var estado = document.getElementById('estado')
+   var bairro = document.getElementById('bairro')
+
+   cidade.value = consultaCEPCovertida.localidade
+   logradouro.value = consultaCEPCovertida.logradouro
+   estado.value = consultaCEPCovertida.uf
+   bairro.value = consultaCEPCovertida.bairro
+
+   console.log(consultaCEPCovertida)
+
+   return consultaCEPCovertida
+} catch(erro) {
+  mensagemErro.innerHTML = `<p> CEP inválido. Digita o cep novamente </p>`
+  console.log(erro)
+ }
+}
+
+var cep = document.getElementById('cep')
+cep.addEventListener('focusout', () => buscaEndereco(cep.value))
+ 
